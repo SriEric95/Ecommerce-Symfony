@@ -3,11 +3,17 @@
   color: #fff;
 }
 
-.footer-custom {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #dfeaff;
-  padding-top: 25px;
+/* .product-item h5 {
+  text-transform: uppercase;
+  font-size: 15px;
+} */
+
+/* .product-item {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 2px;
 }
+
+.product-item .product-price {
+  font-size: 14px;
+} */
