@@ -27,6 +27,7 @@
 				width: 100%;
 				background-color: #dfeaff;
 				padding-top: 25px;
+				margin-top: 50px;
 			}
 
 			.bd-placeholder-img {
@@ -72,6 +73,11 @@
 				font-size: 20px;
 				font-width: bold;
 			}
+
+			.cart-icon {
+				height: 20px;
+				padding-left: 20px;
+			}
 		</style>
 		<!-- Custom styles for this template -->
 		<link href="{{ asset('assets/css/carousel.css' )}}" rel="stylesheet">
@@ -110,6 +116,9 @@
 							<a href="{{ path('register') }}">Inscription</a>
 						{% endif %}
 					</div>
+					<a href="{{ path('cart') }}">
+						<img src="{{ asset('assets/img/shopping-cart.png') }}" class="cart-icon" alt="Mon panier">
+					</a>
 				</div>
 			</nav>
 		</header>
