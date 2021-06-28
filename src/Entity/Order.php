@@ -51,6 +51,11 @@ class Order
      */
     private $orderDetails;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPaid;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
@@ -121,6 +126,17 @@ class Order
         return $this;
     }
 
+    public function getTotal()
+    {
+        $total = null;
+
+        foreach ($this->getOrderDetails()->getValues() as $product) {
+            $total = $total + ($product->getPrice() * $product->getQuantity());
+        }
+
+        return $total;
+    }
+
     /**
      * @return Collection|OrderDetails[]
      */
@@ -147,6 +163,18 @@ class Order
                 $orderDetail->setMyOrder(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsPaid(): ?bool
+    {
+        return $this->isPaid;
+    }
+
+    public function setIsPaid(bool $isPaid): self
+    {
+        $this->isPaid = $isPaid;
 
         return $this;
     }
