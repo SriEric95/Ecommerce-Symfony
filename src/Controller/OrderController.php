@@ -77,7 +77,6 @@ class OrderController extends AbstractController
             $order->setReference($reference);
             $order->setUser($this->getUser());
             $order->setCreatedAt($date);
-            dd($order);
             $order->setCarrierName($carriers->getName());
             $order->setCarrierPrice($carriers->getPrice());
             $order->setDelivery($delivery_content);

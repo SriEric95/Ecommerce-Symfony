@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Classe\Mail;
 use App\Entity\Order;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class OrderSuccessController extends AbstractController
 {
@@ -40,6 +41,10 @@ class OrderSuccessController extends AbstractController
             $this->entityManager->flush();
 
             //Envoyer une email à notre client pour lui confirmer sa commande
+
+            $mail = new Mail();
+            $content = "Bonjour ". $order->getUser()->getFirstName()."<br/> Merci pour votre commande sur le site Ecommerce !<br/>";
+            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstName(), 'Votre commande sur le site Ecommerce !', $content);
         }
 
         return $this->render('order_success/index.html.twig', [
