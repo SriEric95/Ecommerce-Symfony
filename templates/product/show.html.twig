@@ -19,6 +19,15 @@
 			<a href="{{path('add_to_cart', {'id' : product.id })}}" class="btn btn-primary">Ajouter au panier</a>
 		</div>
 	</div>
+	<hr>
+	<h3>Nos meilleurs ventes du moments</h3>
+	<p>Découvrez les articles les plus vendus.</p>
+	<div class="row">
+	{% for product in products %}
+		<div class="col-md-3">
+			{% include 'product/single_product.html.twig' %}
+		</div>
+	{% endfor %}
 
 
 {% endblock %}
