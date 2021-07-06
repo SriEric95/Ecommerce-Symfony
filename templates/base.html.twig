@@ -97,6 +97,23 @@
 				padding: 20px;
 				margin-top: 22px;
 			}
+
+			.account-item {
+				background-color: #f1f2f6;
+				padding : 60px;
+			}
+
+			.account-item a{
+				text-transform: uppercase;
+				font-size: 12px;
+				color: #4b6584;
+				font-weight: bold;
+			}
+
+			.account-item a:hover{
+				color: #778ca3;
+				text-decoration: none
+			}
 		</style>
 		<!-- Custom styles for this template -->
 		<link href="{{ asset('assets/css/carousel.css' )}}" rel="stylesheet">
@@ -117,7 +134,7 @@
 							<a class="nav-link" href="#">Qui sommes-nous ?</a>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Contact</a>
+							<a class="nav-link" href="{{ path('contact') }}">Contact</a>
 						</li>
 					</ul>
 					<div class="navbar-item-custom">
