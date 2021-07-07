@@ -21,7 +21,7 @@ class StripeController extends AbstractController
     public function index(EntityManagerInterface $entityManager,Cart $cart, $reference): Response
     {   
         $product_for_stripe = [];
-        $YOUR_DOMAIN = 'https://projet-ecommerce-symfony.herokuapp.com/';
+        $YOUR_DOMAIN = 'https://projet-ecommerce-symfony.herokuapp.com';
 
         $order = $entityManager->getRepository(Order::class)->findOneByReference($reference);
 
